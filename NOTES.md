@@ -2,26 +2,38 @@
 
 NLP里面生词太多了，做一个对照表
 
-| 单词                   | 解释                       |      |
-| ---------------------- | -------------------------- | ---- |
-| Morphological          | 形态 / 词态                |      |
-| morpheme               | 词素                       |      |
-| stem                   | 词干                       |      |
-| word segmentation      | 分词                       |      |
-| part of speech tagging | 词性标注                   |      |
-| bound morpheme         | 边界词素                   |      |
-| free morpheme          | 自由词素                   |      |
-| Derivational morphemes | 派生词素 （**happi**ness） |      |
-| Inflectional morphemes | 屈折词素（dog**s**）       |      |
-|                        |                            |      |
-|                        |                            |      |
-|                        |                            |      |
-|                        |                            |      |
-|                        |                            |      |
+| 单词                   | 解释                       |
+| ---------------------- | -------------------------- |
+| Morphological          | 形态 / 词态                |
+| morpheme               | 词素                       |
+| stem                   | 词干                       |
+| word segmentation      | 分词                       |
+| part of speech tagging | 词性标注                   |
+| bound morpheme         | 边界词素                   |
+| free morpheme          | 自由词素                   |
+| Derivational morphemes | 派生词素 （**happi**ness） |
+| Inflectional morphemes | 屈折词素（dog**s**）       |
+| lexical analysis       | 词法分析                   |
+| Syntactic analysis     | 句法分析                   |
+| Semantic analysis      | 语义分析                   |
+| hypernym               | 上位词                     |
+| hyponym                | 下位词                     |
+| polysemous             | 多义的                     |
+| discourse integration  | 篇章整合                   |
+| pragmatic analysis     | 语用分析（例如识别：比喻） |
+|                        |                            |
+|                        |                            |
+|                        |                            |
+|                        |                            |
+|                        |                            |
+|                        |                            |
+|                        |                            |
+|                        |                            |
+|                        |                            |
 
 ## Day 04
 
-> 20201205 0.6h
+> 20201205 4h
 
 ### 环境搭建
 
@@ -42,9 +54,13 @@ NLP里面生词太多了，做一个对照表
 
 **进度**
 
+- `11:42`；开始阅读
 - `12:37`；第一章阅读完毕。准备工作并不复杂，我已经有了相应的基础，像Linux环境、Python使用、Linux基础技能等
 - `13:29`；第二章阅读完毕。内容虽然很重要，但是初学者其实不用过于纠结数据抓取，了解大概即可，随着技能逐渐提升，完善即可。python数据爬虫原理很简单，难在数据的清洗和后期处理上。requets / bs4好好配合即可完成大部分工作了。
 - `14:59`；第三章 3.3 阅读完毕。遇到了很多生词，尝试使用ployglot进行英文单词的分词。安装稍微费了些周折。
+- `15:36`；第三章阅读完毕。对于分词有了一些基本认知，但是还不够，可以通过阅读多部书籍来补足。
+- 第五章应该是很重要的一章！！！
+- `16:33`；第四章阅读至4.1。自动处理了一下python2 / python3 的支持。省着手动编辑了。
 
 **笔记**
 
@@ -76,7 +92,7 @@ NLP里面生词太多了，做一个对照表
 > - Semantic analysis
 > - Handling ambiguity
 > - Discourse integration
-> - Pragmatic analysis (实事求是的分析？)
+> - Pragmatic analysis (Prunning a tree is a long process)
 
 ![image-20201205144250660](https://img.juzuq.com/20201205-144253-097.png)
 
@@ -88,8 +104,14 @@ NLP里面生词太多了，做一个对照表
 ![img](https://img.juzuq.com/20201205-140340-675)
 
 - polyglot http://polyglot.readthedocs.org/
+- 在英语中，词性类别有：动词（verb）、名词（noun）、形容词（adjective）、副词（adverb）、代词（pronoun），介词（preposition）、连词（conjunction）、感叹词（interjection）。有些时候。还有数词（numeral）、冠词（article）和限定词（determiner）。
+- nltk
+    - word_tokenize将文本进行分词
+    - WordNetLemmatizer
+- 语法修正软件Grammarly为分句制定了一系列规则，并在分句任务中达到了很高的准确率。该软件的下载地址如下：https://tech.grammarly.com/blog/posts/How-to-Split-Sentences.html。
+- 
 
-### 点亮技能
+### 都是知识！
 
 #### pip使用帮助
 
@@ -143,6 +165,18 @@ pip install polyglot numpy pycorenlp
 
 - vscode terminal默认缓存缓存有些小，可以开大一些
     - https://stackoverflow.com/questions/39881395/visual-studio-code-scroll-back-buffer
+
+#### typora
+
+- 表格中按下`ctrl+Enter`快速插入新行
+
+#### 自动将python2源码转换为python3
+
+```bash
+find . -type f -a -name "*.py" -print0 | xargs -0 -n 1 2to3 -n -w
+```
+
+**注意：此指令不可重复执行，运行前先在自己仓库中提交代码**
 
 ### 练习
 
