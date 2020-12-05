@@ -1,3 +1,154 @@
+## 词汇表
+
+NLP里面生词太多了，做一个对照表
+
+| 单词                   | 解释                       |      |
+| ---------------------- | -------------------------- | ---- |
+| Morphological          | 形态 / 词态                |      |
+| morpheme               | 词素                       |      |
+| stem                   | 词干                       |      |
+| word segmentation      | 分词                       |      |
+| part of speech tagging | 词性标注                   |      |
+| bound morpheme         | 边界词素                   |      |
+| free morpheme          | 自由词素                   |      |
+| Derivational morphemes | 派生词素 （**happi**ness） |      |
+| Inflectional morphemes | 屈折词素（dog**s**）       |      |
+|                        |                            |      |
+|                        |                            |      |
+|                        |                            |      |
+|                        |                            |      |
+|                        |                            |      |
+
+## Day 04
+
+> 20201205 0.6h
+
+### 环境搭建
+
+- 搭建ubuntu工作环境（别用Windows！掉坑里别怪我没提醒你）
+    - 我一直有一台Ubuntu的工作环境，这次没有重新搭建
+    - 以后NLP的学习开发环境将完全使用Linux完成
+- 客户端使用的是VSCode Remote SSH，参考https://jiapeng.me/vscode-remote-ssh/
+- 阅读《Python自然语言处理》
+
+### 《Python自然语言处理》
+
+**电子书**
+
+- 中文版电子版可以在微信阅读上找到
+- 英文原稿可以在http://libgen.rs/下载（注意启用魔法上网）
+- 内容有些老了，用的pyton v2.7.x版本，电子版带面
+- 好尴尬，电子版里面的代码全部是图片格式的，而且没有高亮，推荐对照英文原版一起阅读
+
+**进度**
+
+- `12:37`；第一章阅读完毕。准备工作并不复杂，我已经有了相应的基础，像Linux环境、Python使用、Linux基础技能等
+- `13:29`；第二章阅读完毕。内容虽然很重要，但是初学者其实不用过于纠结数据抓取，了解大概即可，随着技能逐渐提升，完善即可。python数据爬虫原理很简单，难在数据的清洗和后期处理上。requets / bs4好好配合即可完成大部分工作了。
+- `14:59`；第三章 3.3 阅读完毕。遇到了很多生词，尝试使用ployglot进行英文单词的分词。安装稍微费了些周折。
+
+**笔记**
+
+- corpus：语料库
+    - 语料库有时也会被称作数据集。
+    - 语料库是用于**语言分析**和**语料分析**的**系统化**和**计算机化**的**真实语言集合**。
+    - 数据的分裂
+        - 定性：
+        - 定量：
+- 数据预处理
+    - 格式化
+    - 清洗
+    - 采样
+    - 转换数据
+- NLP任务
+    - **自然语言理解（Natural Language Understanding, NLU）**被认为是NLP的第一个任务。
+    - **自然语言生成（Natural Language Generation, NLG）**被认为是NLP的第二个任务。
+    - ![img](https://img.juzuq.com/20201205-134951-728)
+- 自然语言理解被认为是人工智能难（AI-Hard）问题或者人工智能完全（AI-Complete）问题。
+
+> We are going to cover the following topics to improve your understanding of the basic NLP
+> concepts, which will help understand the next chapter:
+>
+> - Understanding the components of NLP
+> - What is context-free grammar?
+> - Morphological analysis
+> - Lexical analysis
+> - Syntactic analysis
+> - Semantic analysis
+> - Handling ambiguity
+> - Discourse integration
+> - Pragmatic analysis (实事求是的分析？)
+
+![image-20201205144250660](https://img.juzuq.com/20201205-144253-097.png)
+
+- 名词短语（NP），动词短语（VP）
+    - VP可以包含有NP
+    - NP可能会包含限定词（determiner）
+- Context-free grammar is also called phrase structure grammar.
+
+![img](https://img.juzuq.com/20201205-140340-675)
+
+- polyglot http://polyglot.readthedocs.org/
+
+### 点亮技能
+
+#### pip使用帮助
+
+```
+# 生成requirements.txt文件
+pip freeze > requirements.txt
+
+# 利用requirements.txt文件安装
+pip install -r requirements.txt -v
+
+pip install polyglot numpy pycorenlp
+```
+
+#### nltk部署
+
+1. 命令按终端输入`python`，进入交互模式
+2. `import nltk`
+3. `nltk.download()`
+4. 按下`d` ，按下`Enter`键
+5. 输入`all`，下载所有包
+6. 要花费点儿时间（注意启用魔法上网加速）
+
+```bash
+> du -h ~/nltk_data --max-depth=0
+3.3G    /home/jp/nltk_data
+```
+
+#### ployglot安装
+
+```
+ apt install libicu-dev
+ pip install numpy
+ pip install polyglot
+ pip install pyicu
+ pip install pycld2
+ pip install morfessor
+```
+
+#### 从微信阅读拷贝原始图片
+
+1. chrome浏览器开启调试模式
+2. inspect点击图片
+3. elments中点击图片连接，在新标签打开
+4. 复制图片！
+
+#### 处理语料库的流程
+
+<img src="https://img.juzuq.com/20201205-124708-204" alt="img" style="zoom:50%;" />
+
+#### vscode 
+
+- vscode terminal默认缓存缓存有些小，可以开大一些
+    - https://stackoverflow.com/questions/39881395/visual-studio-code-scroll-back-buffer
+
+### 练习
+
+1．计算brown语料库中fileID为fileidcc12的文件的单词的数量。
+2．建立你自己的语料库文件，使用nltk加载，然后考察这个语料库的频率分布。
+
 ## Day 03
 
 > 20201201 0.6h
