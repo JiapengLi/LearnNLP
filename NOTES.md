@@ -2,34 +2,106 @@
 
 NLP里面生词太多了，做一个对照表
 
-| 单词                   | 解释                       |
-| ---------------------- | -------------------------- |
-| Morphological          | 形态 / 词态                |
-| morpheme               | 词素                       |
-| stem                   | 词干                       |
-| word segmentation      | 分词                       |
-| part of speech tagging | 词性标注                   |
-| bound morpheme         | 边界词素                   |
-| free morpheme          | 自由词素                   |
-| Derivational morphemes | 派生词素 （**happi**ness） |
-| Inflectional morphemes | 屈折词素（dog**s**）       |
-| lexical analysis       | 词法分析                   |
-| Syntactic analysis     | 句法分析                   |
-| Semantic analysis      | 语义分析                   |
-| hypernym               | 上位词                     |
-| hyponym                | 下位词                     |
-| polysemous             | 多义的                     |
-| discourse integration  | 篇章整合                   |
-| pragmatic analysis     | 语用分析（例如识别：比喻） |
-|                        |                            |
-|                        |                            |
-|                        |                            |
-|                        |                            |
-|                        |                            |
-|                        |                            |
-|                        |                            |
-|                        |                            |
-|                        |                            |
+| 单词                   | 解释                           |
+| ---------------------- | ------------------------------ |
+| Morphological          | 形态 / 词态                    |
+| morpheme               | 词素                           |
+| stem                   | 词干                           |
+| word segmentation      | 分词                           |
+| part of speech tagging | 词性标注                       |
+| bound morpheme         | 边界词素                       |
+| free morpheme          | 自由词素                       |
+| Derivational morphemes | 派生词素 （**happi**ness）     |
+| Inflectional morphemes | 屈折词素（dog**s**）           |
+| lexical analysis       | 词法分析                       |
+| Syntactic analysis     | 句法分析                       |
+| Semantic analysis      | 语义分析                       |
+| hypernym               | 上位词                         |
+| hyponym                | 下位词                         |
+| polysemous             | 多义的                         |
+| discourse integration  | 篇章整合                       |
+| pragmatic analysis     | 语用分析（例如识别：比喻）     |
+| word lemmatization     | 单词词形还原（对中文似乎没用） |
+|                        |                                |
+|                        |                                |
+|                        |                                |
+|                        |                                |
+|                        |                                |
+|                        |                                |
+|                        |                                |
+|                        |                                |
+
+## Day 07
+
+> 20201213 1h
+
+### 《Python自然语言处理》
+
+`10:32`；第6.7章阅读完毕。学习遭遇瓶颈， 弃书换另一本
+
+另外，第11、12章也浏览了一下。
+
+下面计划找一本偏重实战的书增加一些学习的趣味性。
+
+### gensim安装
+
+```
+pip install --upgrade gensim
+```
+
+## Day 06
+
+> 20201210 1h
+
+### 《Python自然语言处理》
+
+**进度**
+
+- `08:13`；第五章阅读完毕。文本特征和NLP算法，讲的实际是从文本中找规律的事儿。内容比较水，快速翻过。
+
+**笔记**
+
+- TensorFlow API：https://www.tensorflow.org/api_docs/python/
+
+- TensorFlow备忘单：https://github.com/crscardellino/cheatsheets/blob/master/tensorflow.md（由Cristian Cardellino制作）
+
+    11.5 NLP和数据科学方面一些有用的博客下面是一些NLP和数据科学领域内重要的博客：● http://www.datasciencecentral.com/● https://nlp.stanford.edu/blog/● http://www.kdnuggets.com/● https://nlpers.blogspot.in/● https://lingpipe-blog.com/lingpipe-home-page/
+
+11.6 使用公开的数据集下面是一些可用的数据集：● Kaggel数据集：https://www.kaggle.com/datasets● UCI机器学习：http://archive.ics.uci.edu/ml/● Reddit：https://www.reddit.com/r/datasets/● 一个非常棒的GitHub代码库包含了一个公开数据集的列表：https://github.com/caesar0301/awesome-public-datasets● Google Advanced Search在你搜索数据集时也非常好用：https://www.google.co.in/advanced_search
+
+## Day 05
+
+> 20201210 1h
+
+### 《Python自然语言处理》
+
+**进度**
+
+- `08:00`； 第四章阅读至4.2
+- `08:34`；第四章阅读完毕。预处理，其实就是数据清洗和格式化，其实是在进行自然语言处理中很重要的一环，数据处理的好，做其他事情才可能事半功倍。
+
+**笔记**
+
+- 介绍正则表达式章节，跳过，是已掌握的内容
+- 对于python的字符串格式化的掌握存在问题，不能随意操控，需要弥补
+- 文本预处理需要把所有字符转为小写，缩写怎么办？
+- 不同的NLP应用，其对于文本的预处理是不一样的
+    - 机器翻译
+    - 情感分析
+    - 语法校正系统
+- 书中提到的一个拼写校正方法
+    - 将词进行重构，加字母，重排等等
+    - 在词库中进行词语命中
+    - 根据词频统计结果
+
+**spacy环境搭建**
+
+```
+pip install spacy
+python -m spacy download en
+```
+
+
 
 ## Day 04
 
@@ -60,7 +132,7 @@ NLP里面生词太多了，做一个对照表
 - `14:59`；第三章 3.3 阅读完毕。遇到了很多生词，尝试使用ployglot进行英文单词的分词。安装稍微费了些周折。
 - `15:36`；第三章阅读完毕。对于分词有了一些基本认知，但是还不够，可以通过阅读多部书籍来补足。
 - 第五章应该是很重要的一章！！！
-- `16:33`；第四章阅读至4.1。自动处理了一下python2 / python3 的支持。省着手动编辑了。
+- `16:33`；第四章阅读至4.1。自动处理了一下NLPython仓库的python2 / python3 的支持。省着手动编辑了。
 
 **笔记**
 
